@@ -1,0 +1,46 @@
+doctype 5
+html(lang='ja', data-ng-app='LSMemo2', data-ng-csp)
+    //- chrome app で AngularJS を使うときは、 ng-csp が必要。http://docs.angularjs.org/api/ng.directive:ngCsp
+    head
+        meta(charset='UTF-8')
+        title LSMemo2
+        link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='bower_components/angular/angular-csp.css')
+        link(rel='stylesheet', href='css/base.css')
+        script(src='bower_components/jquery/jquery.min.js')
+        script(src='bower_components/jquery-ui/ui/jquery-ui.js')
+        script(src='bower_components/angular/angular.min.js')
+        script(src='bower_components/angular-sanitize/angular-sanitize.min.js')
+        script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
+        script(src='bower_components/marked/lib/marked.js')
+        script(src='js/LSMemo2.js')
+    body(data-ng-controller='AppCtrl')
+        div#header.navbar.navbar-inverse.navbar-fixed-top
+            div.container-liquid
+                a.navbar-brand(href='#') LSMemo2
+        div.container-liquid.memo-controller(data-ng-controller='MemoCtrl')
+            div.row
+                div.col-md-12
+                    div.alert.alert-dismissable.fade.in(data-ng-repeat='alert in alerts', class='alert-{{alert.type}}', data-lsmemo2-alert)
+                        button.close(type='button', data-dismiss='alert', data-aria-hidden='true') &times;
+                        {{alert.msg}}
+            ul.nav.nav-tabs(data-lsmemo2-tab)
+                li.tab-head(data-ng-repeat='memo in memos', ng-class='{active:memo.active}')
+                    a(href='#tab{{$index}}', data-toggle='tab') {{memo.title}}
+                        span(data-ng-if='!memo.title') {{memo.placeholder}}
+            div.tab-content
+                div.well.tab-pane(id='tab{{$index}}', data-ng-repeat='memo in memos', ng-class='{active:memo.active}')
+                    div.row
+                        div.col-md-12
+                            p
+                                input.form-control(type='text', placeholder='{{memo.placeholder}}', value='{{memo.title}}', data-ng-model='memo.title')
+                    div.row
+                        div.col-md-6(data-ng-bind-html='memo.content|marked')
+                        div.col-md-6
+                            p
+                                textarea.form-control.editor(data-ng-model='memo.content', data-lsmemo2-editor, placeholder='{{memo.placeholder}}')
+        div.navbar.navbar-inverse.navbar-fixed-bottom.toolbar-controller(data-ng-controller='ToolBarCtrl')
+            div.container-liquid
+                button.btn.btn-danger.navbar-btn(type='button', data-ng-click='toolBarVM.deleteMemo()') delete
+                button.btn.btn-primary.navbar-btn.navbar-right(type='button', data-ng-click='toolBarVM.addMemo()') add
+                button.btn.btn-success.navbar-btn.navbar-right(type='button', data-ng-click='toolBarVM.saveMemo()') save

@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@import "compass/css3";
+
+html {
+    height: 100%;
+}
+
+body {
+    padding: 70px 0;
+    height: 100%;
+    @include box-sizing(border-box);
+    font-family: Helvetica, Arial, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'モリサワ 新ゴ R', 'Droid Sans', メイリオ, 'sans-serif';
+    font-size: 12px;
+}
+
+.container-liquid{
+    padding: 0 15px;
+}
+
+.memo-controller{
+    height: 100%;
+    @include box-sizing(border-box);
+    overflow: auto;
+
+    .nav-tabs{
+        margin-bottom: 15px;
+    }
+
+    .editor{
+        background-color: #333;
+        min-height: 100px;
+        color: #fefefe;
+        font-size: 11px;
+        resize: vertical;
+    }
+}
+
+.toolbar-controller{
+    .navbar-btn{
+        margin-right: 15px;
+    }
+    .navbar-btn.navbar-right{
+        margin-right: 0;
+        margin-left: 15px;
+    }
+}
