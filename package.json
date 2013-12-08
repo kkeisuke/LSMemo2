@@ -2,7 +2,7 @@
   "name": "LSMemo2",
   "version": "0.0.0",
   "description": "local strage memo",
-  "repository": "",
+  "repository": "git@github.com:kkeisuke/LSMemo2.git",
   "homepage": "https://github.com/kkeisuke",
   "author": {
     "name": "kkeisuke"
