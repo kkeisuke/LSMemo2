@@ -19,6 +19,7 @@ module LSMemo2 {
 
         constructor($scope:IMemoCtrlScope, memoStorage:MemoStorage, $timeout:ng.ITimeoutService, successMsg:String){
             this.$scope = $scope
+            this.$scope.memos = []
             this.$scope.memoVM = this
             this.$scope.alerts = []
             this.$scope.activeNo = 0

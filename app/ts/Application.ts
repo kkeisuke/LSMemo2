@@ -11,9 +11,6 @@ module LSMemo2 {
             )
         })
         .filter('marked', Marked.replaceMarkdown)
-        .factory('memos', function(){
-            return []
-        })
         .service('memoStorage', MemoStorage)
         .directive('lsmemo2Tab', LSMemo2Tab.setTab)
         .directive('lsmemo2Editor', LSMemo2Editor.setEditor)

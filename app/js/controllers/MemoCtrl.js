@@ -3,6 +3,7 @@ var LSMemo2;
     var MemoCtrl = (function () {
         function MemoCtrl($scope, memoStorage, $timeout, successMsg) {
             this.$scope = $scope;
+            this.$scope.memos = [];
             this.$scope.memoVM = this;
             this.$scope.alerts = [];
             this.$scope.activeNo = 0;
