@@ -31,12 +31,10 @@ html(lang='ja', data-ng-app='LSMemo2', data-ng-csp)
             div.tab-content
                 div.well.tab-pane(id='tab{{$index}}', data-ng-repeat='memo in memos', ng-class='{active:memo.active}')
                     div.row
-                        div.col-md-12
-                            p
-                                input.form-control(type='text', placeholder='{{memo.placeholder}}', value='{{memo.title}}', data-ng-model='memo.title')
-                    div.row
                         div.col-md-6(data-ng-bind-html='memo.content|marked')
                         div.col-md-6
+                            p
+                                input.form-control(type='text', placeholder='{{memo.placeholder}}', value='{{memo.title}}', data-ng-model='memo.title')
                             p
                                 textarea.form-control.editor(data-ng-model='memo.content', data-lsmemo2-editor, placeholder='{{memo.placeholder}}')
         div.navbar.navbar-inverse.navbar-fixed-bottom.toolbar-controller(data-ng-controller='ToolBarCtrl')
