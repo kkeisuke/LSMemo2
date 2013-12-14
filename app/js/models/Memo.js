@@ -6,6 +6,7 @@ var LSMemo2;
             if (typeof content === "undefined") { content = ''; }
             if (typeof placeholder === "undefined") { placeholder = ''; }
             if (typeof active === "undefined") { active = false; }
+            this.id = Number(Date.now());
             this.title = title;
             this.content = content;
             this.placeholder = placeholder || Memo.placeholder;

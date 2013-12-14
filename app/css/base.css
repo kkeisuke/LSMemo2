@@ -11,16 +11,18 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "モリサワ 新ゴ R", "Droid Sans", メイリオ, "sans-serif";
+  font-family: Helvetica, Arial, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'モリサワ 新ゴ R', 'Droid Sans', メイリオ, 'sans-serif';
   font-size: 12px;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
-/* line 17, ../sass/base.scss */
+/* line 19, ../sass/base.scss */
 .container-liquid {
   padding: 0 15px;
 }
 
-/* line 21, ../sass/base.scss */
+/* line 23, ../sass/base.scss */
 .memo-controller {
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -28,11 +30,27 @@ body {
   box-sizing: border-box;
   overflow: auto;
 }
-/* line 26, ../sass/base.scss */
+/* line 28, ../sass/base.scss */
+.memo-controller .marked-area {
+  line-height: 16px;
+}
+/* line 30, ../sass/base.scss */
+.memo-controller .marked-area strong {
+  color: #D2322D;
+}
+/* line 33, ../sass/base.scss */
+.memo-controller .marked-area li {
+  padding: 4px 0;
+}
+/* line 36, ../sass/base.scss */
+.memo-controller .marked-area p, .memo-controller .marked-area li {
+  cursor: text;
+}
+/* line 41, ../sass/base.scss */
 .memo-controller .nav-tabs {
   margin-bottom: 15px;
 }
-/* line 30, ../sass/base.scss */
+/* line 45, ../sass/base.scss */
 .memo-controller .editor {
   background-color: #333;
   min-height: 100px;
@@ -41,11 +59,11 @@ body {
   resize: vertical;
 }
 
-/* line 40, ../sass/base.scss */
+/* line 55, ../sass/base.scss */
 .toolbar-controller .navbar-btn {
   margin-right: 15px;
 }
-/* line 43, ../sass/base.scss */
+/* line 58, ../sass/base.scss */
 .toolbar-controller .navbar-btn.navbar-right {
   margin-right: 0;
   margin-left: 15px;

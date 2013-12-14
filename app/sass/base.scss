@@ -12,6 +12,8 @@ body {
     @include box-sizing(border-box);
     font-family: Helvetica, Arial, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'モリサワ 新ゴ R', 'Droid Sans', メイリオ, 'sans-serif';
     font-size: 12px;
+    -webkit-user-select: text;
+    user-select: text;
 }
 
 .container-liquid{
@@ -22,6 +24,19 @@ body {
     height: 100%;
     @include box-sizing(border-box);
     overflow: auto;
+
+    .marked-area{
+        line-height: 16px;
+        strong {
+            color: #D2322D;
+        }
+        li {
+            padding: 4px 0;
+        }
+        p,li {
+            cursor: text;
+        }
+    }
 
     .nav-tabs{
         margin-bottom: 15px;

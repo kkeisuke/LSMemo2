@@ -1,4 +1,4 @@
-/// <reference path="../_define.ts" />
+/// <reference path="../_define.d.ts" />
 
 module LSMemo2 {
 
@@ -51,14 +51,14 @@ module LSMemo2 {
             /* this.$scope.$on('clear_memo', (e:ng.IAngularEvent)=>{
                 this.resetMemos()
             }) */
-            this.$scope.$on('select_memo', (e:ng.IAngularEvent, index:Number, preIndex:Number)=>{
+            this.$scope.$on('select_memo', (e:ng.IAngularEvent, index?:Number, preIndex?:Number)=>{
                 this.setActiveMemo(index)
                 this.setUnActiveMemo(preIndex)
             })
-            this.$scope.$on('sort_memo', (e:ng.IAngularEvent, start:Number, end:Number)=>{
+            this.$scope.$on('sort_memo', (e:ng.IAngularEvent, start?:Number, end?:Number)=>{
                 this.sortMemo(start, end)
             })
-            this.$scope.$on('alert_close', (e:ng.IAngularEvent, index:Number)=>{
+            this.$scope.$on('alert_close', (e:ng.IAngularEvent, index?:Number)=>{
                 this.closeAlert(index)
             })
         }
@@ -84,7 +84,9 @@ module LSMemo2 {
         }
 
         public addMemo():void{
-            this.$scope.memos[this.$scope.memos.length] = Memo.getNewMemo()
+            this.$timeout(()=>{
+                this.$scope.memos[this.$scope.memos.length] = Memo.getNewMemo()
+            }, 0)
         }
 
         public deleteMemo():void{
@@ -97,8 +99,10 @@ module LSMemo2 {
         }
 
         public sortMemo(start:Number, end:Number):void{
-            this.$scope.memos.splice(Number(end), 0, this.$scope.memos.splice(Number(start), 1)[0])
-            this.resetActiveNo(this.$scope.memos)
+            this.$timeout(()=>{
+                this.$scope.memos.splice(Number(end), 0, this.$scope.memos.splice(Number(start), 1)[0])
+                this.resetActiveNo(this.$scope.memos)
+            }, 0)
         }
 
         /* public resetMemos():void{

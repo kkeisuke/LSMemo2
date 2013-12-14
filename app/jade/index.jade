@@ -25,13 +25,13 @@ html(lang='ja', data-ng-app='LSMemo2', data-ng-csp)
                         button.close(type='button', data-dismiss='alert', data-aria-hidden='true') &times;
                         {{alert.msg}}
             ul.nav.nav-tabs(data-lsmemo2-tab)
-                li.tab-head(data-ng-repeat='memo in memos', ng-class='{active:memo.active}')
+                li.tab-head(data-ng-repeat='memo in memos track by memo.id', ng-class='{active:memo.active}')
                     a(href='#tab{{$index}}', data-toggle='tab') {{memo.title}}
                         span(data-ng-if='!memo.title') {{memo.placeholder}}
             div.tab-content
-                div.well.tab-pane(id='tab{{$index}}', data-ng-repeat='memo in memos', ng-class='{active:memo.active}')
+                div.well.tab-pane(id='tab{{$index}}', data-ng-repeat='memo in memos track by memo.id', ng-class='{active:memo.active}')
                     div.row
-                        div.col-md-6(data-ng-bind-html='memo.content|marked')
+                        div.col-md-6.marked-area(data-ng-bind-html='memo.content|marked')
                         div.col-md-6
                             p
                                 input.form-control(type='text', placeholder='{{memo.placeholder}}', value='{{memo.title}}', data-ng-model='memo.title')

@@ -1,4 +1,4 @@
-/*! LSMemo2 - v0.0.0 - 2013-12-08
+/*! LSMemo2 - v0.0.0 - 2013-12-13
 * https://github.com/kkeisuke
 * Copyright (c) 2013 kkeisuke; Licensed , ,  */
 var LSMemo2;
@@ -102,7 +102,10 @@ var LSMemo2;
         };
 
         MemoCtrl.prototype.addMemo = function () {
-            this.$scope.memos[this.$scope.memos.length] = LSMemo2.Memo.getNewMemo();
+            var _this = this;
+            this.$timeout(function () {
+                _this.$scope.memos[_this.$scope.memos.length] = LSMemo2.Memo.getNewMemo();
+            }, 0);
         };
 
         MemoCtrl.prototype.deleteMemo = function () {
@@ -116,8 +119,11 @@ var LSMemo2;
         };
 
         MemoCtrl.prototype.sortMemo = function (start, end) {
-            this.$scope.memos.splice(Number(end), 0, this.$scope.memos.splice(Number(start), 1)[0]);
-            this.resetActiveNo(this.$scope.memos);
+            var _this = this;
+            this.$timeout(function () {
+                _this.$scope.memos.splice(Number(end), 0, _this.$scope.memos.splice(Number(start), 1)[0]);
+                _this.resetActiveNo(_this.$scope.memos);
+            }, 0);
         };
 
         MemoCtrl.prototype.saveMemos = function () {
@@ -276,6 +282,9 @@ var LSMemo2;
     LSMemo2.Marked = Marked;
 })(LSMemo2 || (LSMemo2 = {}));
 
+
+
+
 var LSMemo2;
 (function (LSMemo2) {
     var Alert = (function () {
@@ -299,6 +308,7 @@ var LSMemo2;
             if (typeof content === "undefined") { content = ''; }
             if (typeof placeholder === "undefined") { placeholder = ''; }
             if (typeof active === "undefined") { active = false; }
+            this.id = Number(Date.now());
             this.title = title;
             this.content = content;
             this.placeholder = placeholder || Memo.placeholder;

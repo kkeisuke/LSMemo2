@@ -1,9 +1,10 @@
-/// <reference path="../_define.ts" />
+/// <reference path="../_define.d.ts" />
 
 module LSMemo2 {
 
     export class Memo {
 
+        private id:Number
         public title:String
         public content:String
         public placeholder:String
@@ -15,6 +16,7 @@ module LSMemo2 {
         }
 
         constructor(title:String = '', content:String = '', placeholder:String = '', active:Boolean = false){
+            this.id = Number(Date.now())
             this.title = title
             this.content = content
             this.placeholder = placeholder || Memo.placeholder

@@ -1,5 +1,5 @@
 'use strict'
-/// <reference path="_define.ts" />
+/// <reference path="_define.d.ts" />
 
 module LSMemo2 {
     
