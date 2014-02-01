@@ -18,6 +18,7 @@ html(lang='ja', data-ng-app='LSMemo2', data-ng-csp)
         div#header.navbar.navbar-inverse.navbar-fixed-top
             div.container-liquid
                 a.navbar-brand(href='#') LSMemo2
+                button.btn.btn-warning.navbar-btn.navbar-right.btn-xs(type='button', data-ng-click='appVM.close()') close
         div.container-liquid.memo-controller(data-ng-controller='MemoCtrl')
             div.row
                 div.col-md-12

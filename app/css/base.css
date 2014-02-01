@@ -2,9 +2,10 @@
 /* line 5, ../sass/base.scss */
 html {
   height: 100%;
+  -webkit-app-region: drag;
 }
 
-/* line 9, ../sass/base.scss */
+/* line 10, ../sass/base.scss */
 body {
   padding: 70px 0;
   height: 100%;
@@ -17,40 +18,48 @@ body {
   user-select: text;
 }
 
-/* line 19, ../sass/base.scss */
+/* line 20, ../sass/base.scss */
+button {
+  -webkit-app-region: no-drag;
+}
+
+/* line 24, ../sass/base.scss */
 .container-liquid {
   padding: 0 15px;
 }
 
-/* line 23, ../sass/base.scss */
+/* line 28, ../sass/base.scss */
 .memo-controller {
+  margin: 0 auto;
   height: 100%;
+  width: 99.6%;
+  -webkit-app-region: no-drag;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   overflow: auto;
 }
-/* line 28, ../sass/base.scss */
+/* line 37, ../sass/base.scss */
 .memo-controller .marked-area {
   line-height: 16px;
 }
-/* line 30, ../sass/base.scss */
+/* line 39, ../sass/base.scss */
 .memo-controller .marked-area strong {
   color: #D2322D;
 }
-/* line 33, ../sass/base.scss */
+/* line 42, ../sass/base.scss */
 .memo-controller .marked-area li {
   padding: 4px 0;
 }
-/* line 36, ../sass/base.scss */
+/* line 45, ../sass/base.scss */
 .memo-controller .marked-area p, .memo-controller .marked-area li {
   cursor: text;
 }
-/* line 41, ../sass/base.scss */
+/* line 50, ../sass/base.scss */
 .memo-controller .nav-tabs {
   margin-bottom: 15px;
 }
-/* line 45, ../sass/base.scss */
+/* line 54, ../sass/base.scss */
 .memo-controller .editor {
   background-color: #333;
   min-height: 100px;
@@ -59,11 +68,11 @@ body {
   resize: vertical;
 }
 
-/* line 55, ../sass/base.scss */
+/* line 64, ../sass/base.scss */
 .toolbar-controller .navbar-btn {
   margin-right: 15px;
 }
-/* line 58, ../sass/base.scss */
+/* line 67, ../sass/base.scss */
 .toolbar-controller .navbar-btn.navbar-right {
   margin-right: 0;
   margin-left: 15px;

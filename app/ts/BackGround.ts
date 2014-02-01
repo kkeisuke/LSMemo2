@@ -25,7 +25,8 @@ module LSMemo2 {
                         height: screenHeight,
                         top: this.pointOffset,
                         left: this.pointOffset,
-                    }
+                    },
+                    frame: 'none'
                 }, (appWindow)=> {
                     // console.log(appWindow)
                 })

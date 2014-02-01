@@ -21,7 +21,8 @@ var LSMemo2;
                         height: screenHeight,
                         top: _this.pointOffset,
                         left: _this.pointOffset
-                    }
+                    },
+                    frame: 'none'
                 }, function (appWindow) {
                 });
             });

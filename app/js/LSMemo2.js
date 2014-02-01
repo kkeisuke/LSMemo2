@@ -1,6 +1,6 @@
-/*! LSMemo2 - v0.0.0 - 2013-12-13
+/*! LSMemo2 - v0.0.0 - 2014-02-02
 * https://github.com/kkeisuke
-* Copyright (c) 2013 kkeisuke; Licensed , ,  */
+* Copyright (c) 2014 kkeisuke; Licensed , ,  */
 var LSMemo2;
 (function (LSMemo2) {
     var AppCtrl = (function () {
@@ -24,6 +24,10 @@ var LSMemo2;
             this.$scope.$on('click_delete', function (e) {
                 _this.$scope.$broadcast('delete_memo');
             });
+        };
+
+        AppCtrl.prototype.close = function () {
+            window.close();
         };
         AppCtrl.$inject = [
             '$scope'

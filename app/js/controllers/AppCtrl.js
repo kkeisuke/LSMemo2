@@ -22,6 +22,10 @@ var LSMemo2;
                 _this.$scope.$broadcast('delete_memo');
             });
         };
+
+        AppCtrl.prototype.close = function () {
+            window.close();
+        };
         AppCtrl.$inject = [
             '$scope'
         ];

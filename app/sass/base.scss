@@ -4,6 +4,7 @@
 
 html {
     height: 100%;
+    -webkit-app-region: drag;
 }
 
 body {
@@ -16,12 +17,20 @@ body {
     user-select: text;
 }
 
+button{
+    -webkit-app-region: no-drag;
+}
+
 .container-liquid{
     padding: 0 15px;
 }
 
 .memo-controller{
+    margin:0 auto;
     height: 100%;
+    width: 99.6%;
+    -webkit-app-region: no-drag;
+
     @include box-sizing(border-box);
     overflow: auto;
 

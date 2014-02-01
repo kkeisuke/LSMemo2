@@ -35,5 +35,9 @@ module LSMemo2 {
                 this.$scope.$broadcast('clear_memo')
             }) */
         }
+
+        public close():void{
+            window.close()
+        }
     }
 }
